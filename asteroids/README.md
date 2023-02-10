@@ -33,3 +33,37 @@ The game will have the following difficulty levels:
 
 - The game will start with a basic level of difficulty.
 - The difficulty will increase as the player progresses through the game by adding more asteroids or increasing their speed.
+
+## Development Checklist
+In order to create a complete game, the following steps need to be completed:
+
+1. [ ] Project Setup
+2. [ ] Create a Player
+3. [ ] Shoot Projectiles
+4. [ ] Create Enemies
+5. [ ] Detect Collision on Enemy and Projectile Hit
+6. [ ] Detect Collision On Enemy and Player Hit
+7. [ ] Remove Off Screen Projectiles
+8. [ ] Colorize Game
+9. [ ] Shrink Enemies on Hit
+10. [ ] Create Particle Explosion on Hit
+11. [ ] Add Score
+12. [ ] More Accurate Object Removal
+13. [ ] Add Game Over UI
+14. [ ] Add Restart Button
+15. [ ] Add Start Game Button
+16. [ ] UI Animations
+17. [ ] Player Movement
+18. [ ] Homing Enemies
+19. [ ] Spinning Enemies
+20. [ ] Homing-Spinning Enemies
+21. [ ] Power-Ups
+22. [ ] Dynamic Score Labels
+23. [ ] Interactive Background Particles
+24. [ ] Sound Effects
+25. [ ] Background Music
+26. [ ] Mute Button
+27. [ ] Screen Resizing
+28. [ ] Mobile Events compatibility
+29. [ ] Performance
+30. [ ] Deployment
