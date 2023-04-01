@@ -11,53 +11,58 @@
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500&display=swap" rel="stylesheet">
 </head>
 
-<body>
-  <main id="app" class="">
-    <!-- <h1>Asteroids</h1> -->
+<body class="">
+  <main class="w-full h-auto mt-6">
+    <h1 class="text-center text-white text-4xl font-extrabold mb-4">Asteroids</h1>
 
-    <main id="game">
-      <!-- <div id="game-over">
-        <h2>Game Over</h2>
-        <p>Score: <span id="game-over-score">0</span></p>
-        <button id="restart">Restart</button>
-      </div> -->
-      <canvas id="game-canvas" width="600" height="400">
+    <div id="game" class="w-5/6 h-auto mx-auto border-2 border-white relative font-mono">
+      <canvas id="game-canvas" class="w-full h-auto">
         Your browser does not support the canvas element.
         <a href="https://caniuse.com/canvas">Learn more</a>
       </canvas>
 
-      <div id="score" class="hide">
+      <div id="score" class="absolute top-2 left-2 hidden">
         <p>Score: <span id="score-value">0</span></p>
         <p>High Score: <span id="highest-score-value">0</span></p>
       </div>
 
-      <div id="start-game-modal" class="modal">
-        <h2>Start Game</h2>
-        <button id="start-game-btn">Start</button>
+      <div id="start-game-modal" class="modal flex absolute bg-white text-black">
+        <h2 class="mb-2">Start Game</h2>
+        <button id="start-game-btn"
+          class="px-4 py-1 text-sm  font-semibold rounded-full border
+            text-white bg-blue-600 border-transparent
+            hover:bg-white hover:text-blue-600
+            hover:border-blue-200
+            focus:outline-none focus:ring-2
+            focus:ring-blue-600 focus:ring-offset-2
+          ">
+          Start
+        </button>
       </div>
 
-      <div id="game-over-modal" class="modal hide">
-        <h2>Game Over</h2>
+      <div id="game-over-modal" class="modal flex hidden">
+        <h2 class="mb-2">Game Over</h2>
         <p>Score: <span id="restart-game-modal-score">0</span></p>
         <p>High Score: <span id="restart-game-modal-highest-score">0</span></p>
-        <button id="restart-game-btn">Restart</button>
+        <button
+          id="restart-game-btn"
+          class="mt-4 px-4 py-1 text-sm  font-semibold rounded-full border
+            text-white bg-blue-600 border-transparent
+            hover:bg-white hover:text-blue-600
+            hover:border-blue-200
+            focus:outline-none focus:ring-2
+            focus:ring-blue-600 focus:ring-offset-2
+          "
+        >
+          Restart
+      </button>
       </div>
-
-      <!-- <div id="gameOverModal">
-        <h2>Game Over</h2>
-        <p>Score: <span id="game-over-score">0</span></p>
-        <p>High Score: <span id="game-over-high-score-value">0</span></p>
-        <button id="restart">Restart</button>
-      </div> -->
-    </main>
-    <!-- <div id="score">
-      <span>Score: <span id="score-value">0</span>
-    </span>
-
-    <footer>
-      <p>Keep pressing the <b>WASD or arrow keys</b> continuously to move around. <b>Point and click</b> to shoot. To improve your score, collect power-ups as you play (hold down to shoot like a machine gun).</p>
-    </footer> -->
+    </div>
   </main>
+  <footer class="text-center my-2 text-white">
+    <p>Keep pressing the <b>WASD or arrow keys</b> continuously to move around. <b>Point and click</b> to shoot. To
+      improve your score, collect power-ups as you play (hold down to shoot like a machine gun).</p>
+  </footer>
   <script type="module" src="/src/main.ts"></script>
 </body>
 

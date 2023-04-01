@@ -1,6 +1,7 @@
 import gsap from "gsap";
-import "./style.css";
+import "./style.scss";
 
+const gameEl = document.getElementById("game") as HTMLDivElement;
 const canvas = document.getElementById("game-canvas") as HTMLCanvasElement;
 const ctx: CanvasRenderingContext2D = canvas.getContext("2d")!;
 
@@ -174,25 +175,29 @@ function resetVariables() {
   particles = [];
   scoreValEl.innerHTML = score.toString();
   highestScoreEl.innerHTML = highestScore.toString();
+
+  ctx.beginPath();
+  ctx.clearRect(0, 0, canvas.width, canvas.height);
 }
 
-function toggleElements() {
-  startGameModalEl.classList.add("hide");
-  scoreEl.classList.remove("hide");
-  restartGameModalEl.classList.add("hide");
+function showScoreEl() {
+  scoreEl.classList.remove("hidden");
+  startGameModalEl.classList.add("hidden");
+  restartGameModalEl.classList.add("hidden");
 }
 
 function initGame() {
   resetVariables();
   spawnEnemies();
   animate();
-  toggleElements();
+  showScoreEl();
 }
 
 function gameOverHandler() {
   cancelAnimationFrame(animationId);
   console.log("Game Over");
-  restartGameModalEl.classList.remove("hide");
+  scoreEl.classList.add("hidden");
+  restartGameModalEl.classList.remove("hidden");
   restartGameModalScoreEl.innerHTML = score.toString();
 
   if (score > highestScore) {
@@ -275,7 +280,7 @@ function shotProjectile(x, y) {
     player.x,
     player.y,
     5,
-    "white",
+    player.color,
     velocity
   );
   projectiles.push(projectile);
@@ -284,7 +289,7 @@ function shotProjectile(x, y) {
 function animate() {
   animationId = requestAnimationFrame(animate);
   ctx.beginPath();
-  ctx.fillStyle = "rgba(0, 0, 0, .3)";
+  ctx.fillStyle = "rgba(0, 0, 0, .1)";
   ctx.fillRect(0, 0, canvas.width, canvas.height);
   player.draw();
 
@@ -346,7 +351,6 @@ function animate() {
           // Add score
           addScore(shotEnemyScore);
 
-          // enemy.radius = enemy.radius - 10
           gsap.to(enemy, {
             radius: enemy.radius - 10,
           });
@@ -368,6 +372,7 @@ canvas.addEventListener("click", (event) => {
 startGameBtn.addEventListener("click", () => {
   initGame();
 });
+// initGame();
 
 restartGameBtn.addEventListener("click", () => {
   initGame();
